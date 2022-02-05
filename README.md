@@ -51,17 +51,9 @@ The total time complexity would then be: `O(n) + O(n) = 2 * O(n)`, but, since we
 
 As far as I can tell, this algorithm makes use of the Fundamental Theorem of Arithmetic and Euclid's Lemmas. Let's tackle those one by one.
 <br>
-The Fundamental Theorem of Arithmetic is simple. It states that every integer greater than 1 can be represented uniquely as a product of prime numbers, up to the order of the factors. Let's analyze a few examples:
+The Fundamental Theorem of Arithmetic is simple. It states that every integer greater than 1 can be represented uniquely as a product of prime numbers, up to the order of the factors.
 
-**Examples:**
-
->100 = 2^(2) · 5^(2) = 2 · 2 · 5 · 5 = 100
-
->1200 = 2^(4) · 3 · 5^(2) = 2 · 2 · 2 · 2 · 3 · 5 · 5 = 1200
-
->16 = 4 · 4 = 2^(2) · 2^(2) = 2 · 2 · 2 · 2 = 16
-
-I included the last one to show that, even if you start out by dividing some number *n* by a non-prime (composite) number, those composite numbers can be broken down further into prime factors. 
+Even if you start out by dividing some number *n* by a non-prime (composite) number, those composite numbers can be broken down further into prime factors. 
 <br>
 This is actually the contents of one of Euclid's Lemmas: "Any composite number is measured by some prime number" (*Euclid, Elements Book VII, Proposition 31*). *Proposition 32* of the same book is a derivation of the previous statement, which may also be of use here: "Any number either is prime or is measured by some prime number."
 <br><br>
