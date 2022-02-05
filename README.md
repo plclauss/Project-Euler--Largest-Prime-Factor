@@ -16,4 +16,11 @@ A prime number is a number only divisible by itself and 1, right? So, no even nu
 I wonder if, after finding all the possible factors, *m*, of a given number, *n*, if I check against every *m* if it's divisible by any number between two and 10, inclusive, then I can discard it as a possible prime number.<br>
 I'll try this first. As for finding all the possible factors of *n*...<br>
 This one I thought about less, and kind of threw together a solution. Since we're looking for the *largest* possible factor, why don't we start at n-1, decrementing from there until we find a number, *a*, such that `n % a == 0`. Then, we can run it through our function that determines if it's divisible by one of the numbers 2 through 10, inclusive, and if it is, discard it. Otherwise, return that number, and we're done.<br><br>
-This is, by far, the most thrown together, first thought solution I've ever committed to, so I imagine there will be plenty workaround. I will update this README accordingly. 
+This is, by far, the most thrown together, first thought solution I've ever committed to, so I imagine there will be plenty workaround. I will update this README accordingly.
+
+## Update on First Thoughts:
+
+---
+
+That didn't work. I ran the example they gave and received a different output than what I should've gotten. My program returned 377, as it's not divisible by any number between 2 and 10, inclusive.
+<br><br>
