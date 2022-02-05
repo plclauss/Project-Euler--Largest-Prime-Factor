@@ -55,11 +55,11 @@ The Fundamental Theorem of Arithmetic is simple. It states that every integer gr
 ```asm
 Examples:
 
-100 = 2^(2) * 5^(2) = 2 * 2 * 5 * 5 = 100
+//100 = 2^(2) * 5^(2) = 2 * 2 * 5 * 5 = 100
 
-1200 = 2^(4) * 3 * 5^(2) = 2 * 2 * 2 * 2 * 3 * 5 * 5 = 1200
+//1200 = 2^(4) * 3 * 5^(2) = 2 * 2 * 2 * 2 * 3 * 5 * 5 = 1200
 
-16 = 4 * 4 = 2^(2) * 2^(2) = 2 * 2 * 2 * 2 = 16
+//16 = 4 * 4 = 2^(2) * 2^(2) = 2 * 2 * 2 * 2 = 16
 ``` 
 
 I included the last one to show that, even if you start out by dividing some number *n* by a non-prime (composite) number, those composite numbers can be broken down further into prime factors. 
@@ -83,7 +83,7 @@ The PDF then points out the special case of when *k* = 2. Since 2 is the only ev
 <br>
 Here's where the algorithm became a little tricky to understand, but after a short bit of research, I believe this is the message the PDF was trying to convey:
 <br><br>
-*"...Every composite number has a prime factor less than or equal to its square root."* - Retrived from a [Math Stack Exchange Q&A](https://math.stackexchange.com/questions/63276/is-a-prime-factor-of-a-number-always-less-than-its-square-root).
+*"...Every composite number has a prime factor less than or equal to its square root."* - Retrieved from a [Math Stack Exchange Q&A](https://math.stackexchange.com/questions/63276/is-a-prime-factor-of-a-number-always-less-than-its-square-root).
 <br><br>
 The PDF does suggest, however, to start by factoring the even prime, 2, first. After, you may calculate the max limit, which would be the square root of the remaining *n*.
 <br>
