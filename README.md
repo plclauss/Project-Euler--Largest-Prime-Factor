@@ -32,3 +32,14 @@ I suppose if I refactor the code such that, if I find a number, *a*, where `n % 
 
 The solution in my first update worked, but here's the thing. It didn't just work. It worked *beautifully*....for just the example they provided. I'm guessing that the reason it doesn't work for the input given to me is because of how insanely large the input is. The example input is far less than the capacity that an int can hold. The input they're giving me, however, is in the long long int category. Since I'm decrementing my number by 1, it's taking quite a while. I ran the debugger and sat for a minute or so, and even then, it didn't reach into the if statement that essentially controls whether I receive output. It feels like cheating to just sit there and let it do its thing, so I won't be doing that. For one, that's not very good code. Second, I'm not even sure if it crashes before then. So, on to new endeavors:
 <br><br>
+I employed, really, the same method, just in reverse. I noticed that, though the numbers are extremely large, the largest prime factor was rather small. Additionally, instead of checking for every number smaller than the original number, *n*, I halted the program when a non-prime factor was returned from the `isPrime()` function. More detail on my final solution (pre-algorithm reveal) below.
+
+## Final solution (Pre-Algorithm):
+
+---
+
+From main, I call `findDivisor(long long n)`, which returns an `int`. The purpose of this function is to find the smallest possible divisor of some number, *n*. Then, this function calls `isPrime(int m)`, which takes that number *n*, now *m*, and checks to see if it's divisible by any number smaller than it (not including 1). If it is, then we know it's not prime. Upon return, `findDivisor(long long n)` will either set the new highest prime factor, or return the previously found prime number.
+<br><br>
+Now to test my time complexity knowledge: I suppose, in the worst case scenario, for the `findDivisor(long long n)` function, the while loop will travel all the way from 2 to *n* (*i.e.,* `O(n)`). The same is true for the `isPrime(int m)` function, since, if the number, *m*, ***is*** prime, the loop will have to go *all* the way from *m-1* to 2. Thus, another `O(n)`.
+<br>
+The total time complexity would then be: `O(n) + O(n) = 2 * O(n)`, but, since we can ignore constants, the total time complexity of this solution is `O(n)`.
