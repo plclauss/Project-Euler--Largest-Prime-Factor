@@ -60,7 +60,7 @@ Examples:
 1200 = 2^(4) * 3 * 5^(2) = 2 * 2 * 2 * 2 * 3 * 5 * 5 = 1200
 
 16 = 4 * 4 = 2^(2) * 2^(2) = 2 * 2 * 2 * 2 = 16
-```
+``` 
 
 I included the last one to show that, even if you start out by dividing some number *n* by a non-prime (composite) number, those composite numbers can be broken down further into prime factors. 
 <br>
