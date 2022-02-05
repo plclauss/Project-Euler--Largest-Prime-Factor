@@ -3,7 +3,8 @@
 ---
 
 ***Note:*** *Previously, I included my first thoughts, first solution, and analyzed the algorithm that led to the better solution. This time, I will include my first thoughts; any barriers that affected this solution, and how I plan to work around it; my final solution, along with its time complexity; and my analysis of the algorithmic solution, along with its time complexity.*<br>
-***Concerning the time complexity, if I've made an error, please notify me.***
+
+***NOTE: If you notice any mistakes in this analysis, please notify me. This is a learning experience for me, so I'd appreciate anyone bringing any mistakes to my attention.***
 
 ---
 
@@ -60,8 +61,7 @@ The Fundamental Theorem of Arithmetic is simple. It states that every integer gr
 
 >16 = 4 · 4 = 2^(2) · 2^(2) = 2 · 2 · 2 · 2 = 16
 
-
-**I** included the last one to show that, even if you start out by dividing some number *n* by a non-prime (composite) number, those composite numbers can be broken down further into prime factors. 
+I included the last one to show that, even if you start out by dividing some number *n* by a non-prime (composite) number, those composite numbers can be broken down further into prime factors. 
 <br>
 This is actually the contents of one of Euclid's Lemmas: "Any composite number is measured by some prime number" (*Euclid, Elements Book VII, Proposition 31*). *Proposition 32* of the same book is a derivation of the previous statement, which may also be of use here: "Any number either is prime or is measured by some prime number."
 <br><br>
@@ -91,5 +91,3 @@ The PDF does suggest, however, to start by factoring the even prime, 2, first. A
 <br>
 If I'm correct, the worst case scenario would produce `O(n)`. This assumes that the `evenPrime()` function (in my implementation) does nothing. (*i.e.,* the number was not even, so as it proceeds to the next function, the maximum number of iterations it must execute is equal to the number, *n*, itself, meaning the original number was prime).<br>
 ***However,*** if *n* is even and `evenPrime()` does its job, the time complexity would be `O(log(n))`, as we'd effectively be cutting the problem in half over and over.
----
-***NOTE: If you notice any mistakes in this analysis, please notify me. This is a learning experience for me, so I'd appreciate anyone bringing any mistakes to my attention.***
