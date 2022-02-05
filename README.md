@@ -38,8 +38,58 @@ I employed, really, the same method, just in reverse. I noticed that, though the
 
 ---
 
-From main, I call `findDivisor(long long n)`, which returns an `int`. The purpose of this function is to find the smallest possible divisor of some number, *n*. Then, this function calls `isPrime(int m)`, which takes that number *n*, now *m*, and checks to see if it's divisible by any number smaller than it (not including 1). If it is, then we know it's not prime. Upon return, `findDivisor(long long n)` will either set the new highest prime factor, or return the previously found prime number.
+From main, I call `findDivisor(long long n)`, which returns an `int`. The purpose of this function is to find the smallest possible divisor of some number, *n*. Then, this function calls `isPrime(int m)`, which takes that number *n*, now *m*, and checks to see if it's divisible by any number smaller than it (not including 1). If it is, then we know it's not prime. Upon return, `findDivisor(long long n)` will either set the new highest prime factor, or return the previously found prime number. (This definitely contains bugs, though). 
 <br><br>
 Now to test my time complexity knowledge: I suppose, in the worst case scenario, for the `findDivisor(long long n)` function, the while loop will travel all the way from 2 to *n* (*i.e.,* `O(n)`). The same is true for the `isPrime(int m)` function, since, if the number, *m*, ***is*** prime, the loop will have to go *all* the way from *m-1* to 2. Thus, another `O(n)`.
 <br>
 The total time complexity would then be: `O(n) + O(n) = 2 * O(n)`, but, since we can ignore constants, the total time complexity of this solution is `O(n)`.
+
+## The Algorithm:
+
+---
+
+As far as I can tell, this algorithm makes use of the Fundamental Theorem of Arithmetic and Euclid's Lemmas. Let's tackle those one by one.
+<br>
+The Fundamental Theorem of Arithmetic is simple. It states that every integer greater than 1 can be represented uniquely as a product of prime numbers, up to the order of the factors. Let's analyze a few examples:
+
+```asm
+Examples:
+
+100 = 2^(2) * 5^(2) = 2 * 2 * 5 * 5 = 100
+
+1200 = 2^(4) * 3 * 5^(2) = 2 * 2 * 2 * 2 * 3 * 5 * 5 = 1200
+
+16 = 4 * 4 = 2^(2) * 2^(2) = 2 * 2 * 2 * 2 = 16
+```
+I included the last one to show that, even if you start out by dividing some number *n* by a non-prime (composite) number, those composite numbers can be broken down further into prime factors. 
+<br>
+This is actually the contents of one of Euclid's Lemmas: "Any composite number is measured by some prime number" (*Euclid, Elements Book VII, Proposition 31*). *Proposition 32* of the same book is a derivation of the previous statement, which may also be of use here: "Any number either is prime or is measured by some prime number."
+<br><br>
+There are a number of other lemmas concerning this theorem and prime numbers, in general, which I encourage you to read. The above information was retrieved from the [Wikipedia on the Fundamental Theorem of Arithmetic](https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic) and the [Wikipedia on Euclid's Theorems, Lemmas, and Algorithms](https://en.wikipedia.org/wiki/Euclid%27s_lemma#:~:text=Euclid's%20lemma%20%E2%80%94%20If%20a%20prime,those%20integers%20a%20and%20b.&text=Euclid's%20Lemma%20shows%20that%20in,elements%20are%20also%20prime%20elements.).
+<br>
+---
+The information provided, though, should be enough, for now, to explore the algorithm a bit further:
+<br><br>
+**Algorithm, Part I:**
+<br>
+The algorithm suggests that, given a number *n*, and numbers *k = 2, 3, 4, 5, ...*, if *k* is a factor of *n*, we may divide out all possible *k* from *n* before moving on to the next *k*, just as we did in the examples above. This ensures *k* will be prime, as all other smaller factors of *n* have been removed. <br>(*i.e.,* by dividing 100 by 2 repeatedly, we no longer have to worry about the composite factors 50 and 25, as the number we'd be working with from this point forward will be 25, which will then become irrelevant once *k* = 5 .)
+<br><br>
+**Algorithm, Part II:**
+<br>
+The PDF then points out the special case of when *k* = 2. Since 2 is the only even prime, if we divide out *n* by 2 in its own loop/function, the factor *k* in the other loop/function may increase its factor by 2, instead of 1, as we were doing before.
+<br><br>
+**Algorithm, Part III:**
+<br>
+Here's where the algorithm became a little tricky to understand, but after a short bit of research, I believe this is the message the PDF was trying to convey:
+<br><br>
+*"...Every composite number has a prime factor less than or equal to its square root."* - Retrived from a [Math Stack Exchange Q&A](https://math.stackexchange.com/questions/63276/is-a-prime-factor-of-a-number-always-less-than-its-square-root).
+<br><br>
+The PDF does suggest, however, to start by factoring the even prime, 2, first. After, you may calculate the max limit, which would be the square root of the remaining *n*.
+<br>
+---
+**Time Complexity:**
+<br>
+If I'm correct, the worst case scenario would produce `O(n)`. This assumes that the `evenPrime()` function (in my implementation) does nothing. (*i.e.,* the number was not even, so as it proceeds to the next function, the maximum number of iterations it must execute is equal to the number, *n*, itself, meaning the original number was prime).<br>
+***However,*** if *n* is even and `evenPrime()` does its job, the time complexity would be `O(log(n))`, as we'd effectively be cutting the problem in half over and over.
+---
+***NOTE: If you notice any mistakes in this analysis, please notify me. This is a learning experience for me, so I'd appreciate anyone bringing any mistakes to my attention.***
