@@ -64,7 +64,7 @@ I included the last one to show that, even if you start out by dividing some num
 <br>
 This is actually the contents of one of Euclid's Lemmas: "Any composite number is measured by some prime number" (*Euclid, Elements Book VII, Proposition 31*). *Proposition 32* of the same book is a derivation of the previous statement, which may also be of use here: "Any number either is prime or is measured by some prime number."
 <br><br>
-There are a number of other lemmas concerning this theorem and prime numbers, in general, which I encourage you to read. The above information was retrieved from the [Wikipedia on the Fundamental Theorem of Arithmetic](https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic).
+There are a number of other lemmas concerning this theorem and prime numbers, in general, which I encourage you to read. The above information was retrieved from the [Wikipedia on the Fundamental Theorem of Arithmetic](https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic) and the [Wikipedia on Euclid's Theorems, Lemmas, and Algorithms](https://en.wikipedia.org/wiki/Euclid%27s_lemma#:~:text=Euclid's%20lemma%20%E2%80%94%20If%20a%20prime,those%20integers%20a%20and%20b.&text=Euclid's%20Lemma%20shows%20that%20in,elements%20are%20also%20prime%20elements.).
 <br>
 ---
 The information provided, though, should be enough, for now, to explore the algorithm a bit further:
