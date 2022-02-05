@@ -1,4 +1,4 @@
-#Project Euler: Problem 3 - Largest Prime Factor:
+# Project Euler: Problem 3 - Largest Prime Factor:
 
 ---
 
@@ -7,7 +7,7 @@
 
 ---
 
-##First thoughts:
+## First thoughts:
 
 ---
 
