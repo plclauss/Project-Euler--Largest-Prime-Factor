@@ -51,8 +51,7 @@ The total time complexity would then be: `O(n) + O(n) = 2 * O(n)`, but, since we
 As far as I can tell, this algorithm makes use of the Fundamental Theorem of Arithmetic and Euclid's Lemmas. Let's tackle those one by one.
 <br>
 The Fundamental Theorem of Arithmetic is simple. It states that every integer greater than 1 can be represented uniquely as a product of prime numbers, up to the order of the factors. Let's analyze a few examples:
-```asm
-
+```
 Examples:
 
 100 = 2^(2) · 5^(2) = 2 · 2 · 5 · 5 = 100
