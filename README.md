@@ -24,3 +24,11 @@ This is, by far, the most thrown together, first thought solution I've ever comm
 
 That didn't work. I ran the example they gave and received a different output than what I should've gotten. My program returned 377, as it's not divisible by any number between 2 and 10, inclusive.
 <br><br>
+I suppose if I refactor the code such that, if I find a number, *a*, where `n % a == 0`, I can recursively call the same function, decrementing *a'*, checking to see if `a % a' == 0`. Once I get to a number, *a<sup>(x)</sup>*, where *x* is some number greater than 1, that is NOT divisible by any smaller number, I return this number.
+
+## Update 2:
+
+---
+
+The solution in my first update worked, but here's the thing. It didn't just work. It worked *beautifully*....for just the example they provided. I'm guessing that the reason it doesn't work for the input given to me is because of how insanely large the input is. The example input is far less than the capacity that an int can hold. The input they're giving me, however, is in the long long int category. Since I'm decrementing my number by 1, it's taking quite a while. I ran the debugger and sat for a minute or so, and even then, it didn't reach into the if statement that essentially controls whether I receive output. It feels like cheating to just sit there and let it do its thing, so I won't be doing that. For one, that's not very good code. Second, I'm not even sure if it crashes before then. So, on to new endeavors:
+<br><br>
