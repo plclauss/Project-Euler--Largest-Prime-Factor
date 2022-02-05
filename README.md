@@ -61,7 +61,7 @@ The Fundamental Theorem of Arithmetic is simple. It states that every integer gr
 >16 = 4 · 4 = 2^(2) · 2^(2) = 2 · 2 · 2 · 2 = 16
 
 
-I included the last one to show that, even if you start out by dividing some number *n* by a non-prime (composite) number, those composite numbers can be broken down further into prime factors. 
+**I** included the last one to show that, even if you start out by dividing some number *n* by a non-prime (composite) number, those composite numbers can be broken down further into prime factors. 
 <br>
 This is actually the contents of one of Euclid's Lemmas: "Any composite number is measured by some prime number" (*Euclid, Elements Book VII, Proposition 31*). *Proposition 32* of the same book is a derivation of the previous statement, which may also be of use here: "Any number either is prime or is measured by some prime number."
 <br><br>
